@@ -1,8 +1,5 @@
 # Published Versions
 ## Version 1.0.0
-### Date
-May 30, 2014, 5:46 PM
+May 16, 2014
 ### Changes
 - Not quite sure.
-
-# Internal Changes
