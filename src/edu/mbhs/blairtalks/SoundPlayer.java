@@ -1,15 +1,12 @@
 package edu.mbhs.blairtalks;
 
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.SpinnerAdapter;
 
 public class SoundPlayer extends Activity {
 	
@@ -23,8 +20,6 @@ public class SoundPlayer extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sound_player);
 		play = (ImageView) (findViewById(R.id.playImage));
-		getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST); 
-		SpinnerAdapter teacher = ArrayAdapter.createFromResource(this, R.array.teachers, android.R.layout.simple_spinner_dropdown_item);
 		mp = MediaPlayer.create(SoundPlayer.this,  R.raw.duval);
 		mp2=MediaPlayer.create(SoundPlayer.this, R.raw.rose);
 		
