@@ -4,6 +4,7 @@
     <string name="app_name">Blair Talks</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+
     <string-array name="teachers">
         <item>Ms. Duval</item>
         <item>Ms. Dvorsky</item>
@@ -16,7 +17,9 @@
         <item>Mr. Schafer</item>
         <item>Mr. Stein</item>
         <item>Mr. Street</item>
-        <item >PHAM ROSE DUBSTEP MASH</item>
+        <item>PHAM ROSE DUBSTEP MASH</item>
     </string-array>
+
+    <string name="title_activity_main_menu">MainMenu</string>
 
 </resources>
