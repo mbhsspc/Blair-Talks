@@ -37,8 +37,7 @@ public class ImageGrid extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View grid;
-		LayoutInflater inflater = (LayoutInflater) 
-				mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		
 		if (convertView == null){
 			grid = new View(mContext);
@@ -48,8 +47,7 @@ public class ImageGrid extends BaseAdapter {
 			grid = (View) convertView;
 		}
 
-		((ImageView) grid.findViewById(R.id.grid_image))
-				.setImageResource(imageId[position]);
+		((ImageView) grid.findViewById(R.id.grid_image)).setImageResource(imageId[position]);
 		
 		return grid;
 	}
