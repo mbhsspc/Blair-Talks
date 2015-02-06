@@ -11,13 +11,14 @@ import android.widget.GridView;
 
 public class MainMenu extends Activity {
 
-	int[] imageId = {
-			R.drawable.duval, R.drawable.dvorsky,
-			R.drawable.fowler, R.drawable.giles,
-			R.drawable.ostrander, R.drawable.pham,
-			R.drawable.piper, R.drawable.rose,
-			R.drawable.schafer, R.drawable.stein,
-			R.drawable.street, R.drawable.rosestache
+	// Index for the icons of teachers
+	private int[] imageId = {
+			R.drawable.duval_small, R.drawable.dvorsky_small,
+			R.drawable.fowler_small, R.drawable.giles_small,
+			R.drawable.ostrander_small, R.drawable.pham_small,
+			R.drawable.piper_small, R.drawable.rose_small,
+			R.drawable.schafer_small, R.drawable.stein_small,
+			R.drawable.street_small, R.drawable.rosestache_small
 	};
 	
 	GridView gv;
@@ -27,7 +28,7 @@ public class MainMenu extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_menu);
 		
-		gv = (GridView) findViewById(R.id.gridView1);
+		gv = (GridView) findViewById(R.id.namesGridView);
 		ImageGrid adapter = new ImageGrid(this, imageId);
 		gv.setAdapter(adapter);
 		gv.setOnItemClickListener(new OnItemClickListener() {
