@@ -17,21 +17,32 @@ public class SoundPlayer extends Activity {
 	
 	private ImageView play = null;		// Picture of teacher.
 	// private boolean isPlaying = false;
-	MediaPlayer mp = null; 		// Are these supposed to be private? - Robert
-	MediaPlayer mp2 = null; 	// Are these supposed to be private? - Robert
+	private MediaPlayer mp = null;		//Media player for teacher.
+	private MediaPlayer mp2 = null;		
 	
 	// Teacher asset files
-	private int[] soundFilesTeachers = { R.raw.duval, R.raw.dvorsky, R.raw.fowler, R.raw.giles, R.raw.ostrander, R.raw.pham, 
-			R.raw.piper, R.raw.rose, R.raw.schafer, R.raw.stein, R.raw.street };
-	private int[] imageFilesHDTeachers = { R.drawable.duval, R.drawable.dvorsky, R.drawable.fowler, R.drawable.giles, R.drawable.ostrander, R.drawable.pham, 
-			R.drawable.piper, R.drawable.rose, R.drawable.schafer, R.drawable.stein, R.drawable.street, R.drawable.rosestachecopy };
+	private int[] soundFilesTeachers = { 
+			R.raw.duval, R.raw.dvorsky, 
+			R.raw.fowler, R.raw.giles, 
+			R.raw.ostrander, R.raw.pham, 
+			R.raw.piper, R.raw.rose, 
+			R.raw.schafer, R.raw.stein, 
+			R.raw.street, 0 };
+	
+	//Teacher full side portraits
+	private int[] imageFilesHDTeachers = { 
+			R.drawable.duval, R.drawable.dvorsky, 
+			R.drawable.fowler, R.drawable.giles, 
+			R.drawable.ostrander, R.drawable.pham, 
+			R.drawable.piper, R.drawable.rose, 
+			R.drawable.schafer, R.drawable.stein, 
+			R.drawable.street, R.drawable.rosestachecopy };
 	
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sound_player);
 		
-		//I may be wrong about this, but I'm not sure if these need to be or should be in OnCreate vs instance variables.
 		mp = MediaPlayer.create(SoundPlayer.this,  R.raw.duval);
 		mp2 = MediaPlayer.create(SoundPlayer.this, R.raw.rose);
 		play = (ImageView) (findViewById(R.id.playImage));
@@ -44,6 +55,7 @@ public class SoundPlayer extends Activity {
 			setImageAndMedia(itemPosition);
 		else if(itemPosition == 11)
 		{
+			// Rose + Pham special
 			play.setImageResource(R.drawable.rosestachecopy);
 			mp2 = MediaPlayer.create(SoundPlayer.this, R.raw.rose);
 			mp2.start();
@@ -70,6 +82,10 @@ public class SoundPlayer extends Activity {
 		});	
 	} // end protected void onCreate(Bundle savedInstanceState)
 
+	/************************************************************
+	 * Sets the correct teacher picture and teacher voice		*
+	 * @param n Which teacher to set							*
+	 ************************************************************/
 	private void setImageAndMedia(int n)
 	{
 		mp = MediaPlayer.create(SoundPlayer.this, soundFilesTeachers[n]);

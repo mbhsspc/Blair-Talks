@@ -42,8 +42,7 @@ public class ImageGrid extends BaseAdapter {
 		if (convertView == null){
 			grid = new View(mContext);
 			grid = inflater.inflate(R.layout.grid_single, null);
-		}
-		else {
+		} else {
 			grid = (View) convertView;
 		}
 
